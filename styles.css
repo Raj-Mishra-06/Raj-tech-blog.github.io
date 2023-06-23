@@ -99,8 +99,8 @@ section h2 {
   #home,
   #categories,
   #articles {
-    height: 700;
-    margin-bottom: auto;
+    height: 1300px;
+    margin-bottom: 40px;
     margin-top: auto;
   }
 }
@@ -141,6 +141,7 @@ section h2 {
     background: transparent;
     padding: 20px;
     transition: transform 0.3s;
+    box-sizing: border-box; /* Add box-sizing property */
 }
 
 .article-list .article:hover {
@@ -183,31 +184,37 @@ section h2 {
     text-decoration: underline;
 }
 
-
-/* Media Query for smaller screen sizes */
-@media screen and (max-width: 768px) {
-  .article-list .article {
-    width: calc(50% - 20px);
-    margin-bottom: 50px;
-  }
-}
-
-
-
 .category-list {
     display: flex;
     flex-direction: column;
-    align-items: left;
-  }
-  
-  .category {
+    align-items: flex-start; /* Adjust align-items property */
+}
+
+.category {
     width: 100%;
     max-width: 300px;
+    margin-top: 20px; /* Adjust margin-top property */
     margin-bottom: 20px;
     background-color: #f5f5f5;
     padding: 20px;
     text-align: left;
-  }
+}
+
+/* Media Query for smaller screen sizes */
+@media screen and (max-width: 768px) {
+    .article-list .article {
+        width: calc(80% - 20px); /* Adjust the width */
+    }
+  
+    .category-list {
+        align-items: flex-start; /* Adjust align-items property */
+    }
+  
+    .article-list .article:nth-child(3n+1) {
+        clear: both; /* Clear the float on every 3rd article */
+    }
+}
+
   
 
 #subscribe {
